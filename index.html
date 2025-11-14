@@ -1,7 +1,230 @@
+Adaptive, [14.11.2025 17:25]
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переход в Telegram каналы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .main-title {
+            color: white;
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+        }
+        
+        .price-section {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .price-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            min-width: 280px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .price-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .price-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .price-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .price-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+        
+        .price-button.secondary {
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+        }
+        
+        .price-button.secondary:hover {
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.6);
+        }
+        
+        .channels-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+        
+        .channel-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            min-width: 320px;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+Adaptive, [14.11.2025 17:25]
 }
+        
+        .channel-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+        
+        .channel-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+            color: white;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .channel-card:nth-child(2) .channel-icon {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+        }
+        
+        .channel-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .channel-description {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #666;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .channel-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .channel-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        .channel-button.secondary {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+        }
+        
+        .channel-button.secondary:hover {
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.2em;
+                margin-bottom: 40px;
+            }
             
-            .info-box {
+            .price-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .price-card {
                 width: 100%;
+                max-width: 400px;
+            }
+            
+            .channels-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .channel-card {
+                width: 100%;
+                max-width: 400px;
             }
         }
         
@@ -10,49 +233,76 @@
                 font-size: 1.8em;
             }
             
-            .info-text {
+            .price-card,
+            .channel-card {
+                padding: 25px 20px;
+                min-width: unset;
+            }
+            
+            .price-button,
+            .channel-button {
+                padding: 12px 30px;
                 font-size: 1em;
             }
             
-            .project-button {
-                padding: 10px 20px;
-                font-size: 0.9em;
+            .channel-title {
+                font-size: 1.4em;
             }
             
-            .top-button {
-                padding: 12px 25px;
+            .channel-description {
                 font-size: 1em;
             }
         }
     </style>
 </head>
 <body>
-    <h1 class="main-title">ПЕРЕХОД В ПРОЕКТ</h1>
-    
-    <!-- Верхние кнопки -->
-    <div class="top-buttons">
-        <a href="http://pricedefiz.t.me" class="top-button price-button" target="_blank">
-            ПРАЙС ДЕФИЗАТОВА
-        </a>
-        <a href="http://praisyshnogo.t.me" class="top-button" target="_blank">
-            ПРАЙС ЮЖНОГО
-        </a>
-    </div>
-    
-    <!-- Каналы -->
-    <div class="info-container">
-        <div class="info-box">
-            <p class="info-text">Тетрадь смерти - канал для кибербезопасности и устранения мусора в телеграмме</p>
-            <a href="https://t.me/+rrJSQ9qFhE0zMGIx" class="project-button" target="_blank">
-                ПЕРЕЙТИ В ПРОЕКТ
-            </a>
+    <div class="container">
+        <h1 class="main-title">ПЕРЕХОД В ПРОЕКТ</h1>
+        
+        <!-- Секция с прайсами -->
+        <div class="price-section">
+            <div class="price-card">
+                <div class="price-title">ПРАЙС ДЕФИЗАТОВА</div>
+                <a href="http://pricedefiz.t.me" class="price-button" target="_blank">
+
+Adaptive, [14.11.2025 17:25]
+ОТКРЫТЬ ПРАЙС
+                </a>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-title">ПРАЙС ЮЖНОГО</div>
+                <a href="http://praisyshnogo.t.me" class="price-button secondary" target="_blank">
+                    ОТКРЫТЬ ПРАЙС
+                </a>
+            </div>
         </div>
         
-        <div class="info-box">
-            <p class="info-text">Южный - Канал для ликвидации бичей и авторского контента</p>
-            <a href="https://t.me/+GVHN2G4xq0RkNzli" class="project-button southern-button" target="_blank">
-                ПЕРЕЙТИ В ПРОЕКТ
-            </a>
+        <!-- Секция с каналами -->
+        <div class="channels-section">
+            <div class="channel-card">
+                <div class="channel-icon">📓</div>
+                <h2 class="channel-title">Тетрадь смерти</h2>
+                <p class="channel-description">
+                    Канал для кибербезопасности и устранения мусора в телеграмме. 
+                    Профессиональные решения для вашей цифровой безопасности.
+                </p>
+                <a href="https://t.me/+rrJSQ9qFhE0zMGIx" class="channel-button" target="_blank">
+                    ПЕРЕЙТИ В КАНАЛ
+                </a>
+            </div>
+            
+            <div class="channel-card">
+                <div class="channel-icon">🔥</div>
+                <h2 class="channel-title">Южный</h2>
+                <p class="channel-description">
+                    Канал для ликвидации бичей и авторского контента. 
+                    Эксклюзивные материалы и профессиональный подход к каждому проекту.
+                </p>
+                <a href="https://t.me/+GVHN2G4xq0RkNzli" class="channel-button secondary" target="_blank">
+                    ПЕРЕЙТИ В КАНАЛ
+                </a>
+            </div>
         </div>
     </div>
 </body>
