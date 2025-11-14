@@ -1,100 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Переход в Telegram каналы</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .main-title {
-            color: white;
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .info-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 900px;
-            width: 100%;
-        }
-        
-        .info-box {
-            background-color: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .info-box:hover {
-            transform: translateY(-10px);
-        }
-        
-        .info-text {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        .project-button {
-            display: inline-block;
-            background: linear-gradient(to right, #667eea, #764ba2);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .project-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .southern-button {
-            background: linear-gradient(to right, #f093fb, #f5576c);
-        }
-        
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2em;
-            }
-            
-            .info-container {
-                flex-direction: column;
-                align-items: center;
-            }
+}
             
             .info-box {
                 width: 100%;
@@ -114,12 +18,28 @@
                 padding: 10px 20px;
                 font-size: 0.9em;
             }
+            
+            .top-button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <h1 class="main-title">ПЕРЕХОД В ПРОЕКТ</h1>
     
+    <!-- Верхние кнопки -->
+    <div class="top-buttons">
+        <a href="http://pricedefiz.t.me" class="top-button price-button" target="_blank">
+            ПРАЙС ДЕФИЗАТОВА
+        </a>
+        <a href="http://praisyshnogo.t.me" class="top-button" target="_blank">
+            ПРАЙС ЮЖНОГО
+        </a>
+    </div>
+    
+    <!-- Каналы -->
     <div class="info-container">
         <div class="info-box">
             <p class="info-text">Тетрадь смерти - канал для кибербезопасности и устранения мусора в телеграмме</p>
@@ -129,7 +49,7 @@
         </div>
         
         <div class="info-box">
-            <p class="info-text">Южный - канал для ликвидации бичей и авторского контента</p>
+            <p class="info-text">Южный - Канал для ликвидации бичей и авторского контента</p>
             <a href="https://t.me/+GVHN2G4xq0RkNzli" class="project-button southern-button" target="_blank">
                 ПЕРЕЙТИ В ПРОЕКТ
             </a>
